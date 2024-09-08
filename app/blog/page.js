@@ -26,7 +26,7 @@ const blogs = [
     slug: "third-blog",
     date: "2023-10-03",
     author: "Charlie Brown",
-    image: "https://images.pexels.com/photos/1261427/pexels-photo-1261427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZD7gtOg-aRXiYZ_ZkmYGch46UxHAygL-Pw&s",
   },
   // Add more blog objects as needed
 ];
