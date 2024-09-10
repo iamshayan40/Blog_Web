@@ -176,7 +176,7 @@ export default function Page() {
             ].map((plan, index) => (
               <div
                 key={index}
-                className={`bg-white dark:bg-gray-800 shadow-lg shadow-gray-500 dark:shadow-gray-700 rounded-lg p-6 w-full md:w-1/3 hover:shadow-2xl transition-shadow duration-300 text-center hover:scale-105 transition-transform duration-300 ${
+                className={`bg-white dark:bg-gray-800 shadow-lg shadow-gray-500 dark:shadow-gray-700 rounded-lg p-6 w-full md:w-1/3 hover:shadow-2xl transition-shadow duration-300 text-center hover:scale-105 transform ${
                   plan.isBestseller
                     ? "border-2 border-customPurple relative"
                     : ""
