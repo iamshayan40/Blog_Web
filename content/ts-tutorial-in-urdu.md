@@ -1,15 +1,11 @@
 ---
 title: "TypeScript Tutorial In Urdu"
-slug: "ts-tutorial-urdu"
+slug: "ts-tutorial-in-urdu"
 description: "TypeScript ek JavaScript-based language hai jo strong type checking aur better debugging tools provide karti hai. Ye code ko JavaScript mein convert karta hai. Is blog mein, hum TypeScript ke basics aur use ko discuss karenge."
 date: "9/09/2024"
 author: "Muhammad Shayan"
 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9gllMAZ8aQvnxnCey8rE1512fQmZs8ijI8A&s"  # Add a valid image URL here
 ---
-
-# TypeScript Tutorial in Urdu
-
-## Introduction
 
 TypeScript ek superset hai JavaScript ka jo additional features provide karta hai, jese ke static types aur object-oriented programming ke tools. Agar aap already JavaScript samajhte hain, to TypeScript seekhna aap ke liye kaafi asaan hoga. Is tutorial mein hum TypeScript ke advanced concepts seekhne walay hain, aur sath hi real-world projects pe kaam karenge.
 
@@ -19,7 +15,7 @@ Agar aap web development ya software engineering mein apna career banana chahte 
 
 TypeScript ek strongly-typed programming language hai jo JavaScript ko extend karti hai. Ye type-checking aur code validation tools ko JavaScript ke sath merge karke coding experience ko zyada reliable aur error-free banata hai. Yeh Microsoft ki taraf se develop ki gayi hai aur aaj kal duniya bhar ke developers TypeScript ko apni JavaScript applications mein use karte hain.
 
-### TypeScript Ka Faiyda Kya Hai?
+## TypeScript Ka Faiyda Kya Hai?
 
 - **Static Typing**: TypeScript mein aap pehle se define kar sakte hain ke kisi variable ya function ka return type kya hoga. Is se aap ke code mein bugs kam hote hain aur code zyada maintainable hota hai.
 - **Code Completion & Error Detection**: TypeScript aapke IDE mein auto-completion aur error detection tools ka integration karta hai, jise coding fast aur error-free hoti hai.
@@ -38,7 +34,7 @@ Is command ke baad, aap apne computer pe TypeScript ke tools ko use karne ke liy
 
 ## TypeScript Basics
 
-### Variables aur Types
+## Variables aur Types
 
 TypeScript mein variables ko define karte waqt aap type specify kar sakte hain:
 
@@ -48,7 +44,7 @@ let name: string = "Shayan";
 let isActive: boolean = true;
 ```
 
-### Functions
+## Functions
 
 TypeScript mein aap function ka return type bhi define kar sakte hain. Agar aapko pata hai ke ek function hamesha `number` return karega, to aap aise define karenge:
 
@@ -58,7 +54,7 @@ function multiply(x: number, y: number): number {
 }
 ```
 
-### Interfaces
+## Interfaces
 
 Interfaces aapke objects ke structure ko define karne ka tareeqa hain:
 
@@ -79,11 +75,11 @@ let user: Person = {
 
 Aap TypeScript ko real-world projects mein kaise use kar sakte hain, is section mein hum kuch projects discuss karenge.
 
-### Project 1: Simple To-Do List Application
+## Project 1: Simple To-Do List Application
 
 Is project mein hum ek simple to-do list application banayenge jisme user apne tasks ko add, update, aur delete kar sakta hai.
 
-#### Steps:
+## Steps:
 1. TypeScript environment setup karna.
 2. To-Do items ka interface define karna.
 3. Functions ka use kar ke add, edit, aur delete functionalities implement karna.
@@ -107,11 +103,11 @@ function addTask(task: string): void {
 }
 ```
 
-### Project 2: E-commerce Product Page
+## Project 2: E-commerce Product Page
 
 Is project mein hum ek product page banayenge jisme aap product ki detail show karenge aur product ko cart mein add karne ki functionality provide karenge.
 
-#### Steps:
+## Steps:
 1. Products ka interface create karna.
 2. Products ko list karna aur cart functionality implement karna.
 

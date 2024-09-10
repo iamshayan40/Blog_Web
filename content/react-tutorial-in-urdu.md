@@ -7,11 +7,9 @@ author: "Muhammad Shayan"
 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqCBxjO7bktm09kpP71A_nkD-bV23NJr2Nkw&s" 
 ---
 
-**React Tutorial In Urdu**
-
 React ek popular JavaScript library hai jo user interfaces banane ke liye use hoti hai. Facebook ne is library ko develop kiya hai, aur ye components-based architecture ko follow karti hai jo development ko modular aur maintainable banata hai. Is blog mein, hum React ke basics, components, aur state management ko cover karenge.
 
-### React Ki Basic Properties
+## React Ki Basic Properties
 
 1. **Components**: React mein sab kuch components hota hai. Ye components re-usable code blocks hain jo UI elements ko represent karte hain.
    ```jsx
@@ -53,7 +51,7 @@ React ek popular JavaScript library hai jo user interfaces banane ke liye use ho
    }
    ```
 
-### React Components
+## React Components
 
 1. **Functional Components**: Ye simple functions hote hain jo props ko accept karte hain aur UI render karte hain.
    ```jsx
@@ -71,7 +69,7 @@ React ek popular JavaScript library hai jo user interfaces banane ke liye use ho
    }
    ```
 
-### React Hooks
+## React Hooks
 
 1. **useState**: Functional components mein state management ke liye use hota hai.
    ```jsx
@@ -108,7 +106,7 @@ React ek popular JavaScript library hai jo user interfaces banane ke liye use ho
    }
    ```
 
-### React Routing
+## React Routing
 
 React Router ek library hai jo client-side routing ke liye use hoti hai, jisse aap apni application mein different pages aur routes define kar sakte hain.
    ```jsx
@@ -126,7 +124,7 @@ React Router ek library hai jo client-side routing ke liye use hoti hai, jisse a
    }
    ```
 
-### Conclusion
+## Conclusion
 
 React ek powerful library hai jo modern web development ko simplify karti hai. Is blog mein humne React ke basics, components, state management, aur routing ko cover kiya. Practice karte rahiye aur naye React features explore karte rahiye!
 

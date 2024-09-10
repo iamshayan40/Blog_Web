@@ -7,8 +7,6 @@ author: "Muhammad Shayan"
 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZD7gtOg-aRXiYZ_ZkmYGch46UxHAygL-Pw&s"
 ---
 
-# Intro
-
 Next.js ek powerful framework hai jo React.js ke upar built hai. Iska istemal karke aap easily server-side rendering aur static site generation kar sakte hain. Is blog post mein hum Next.js ke basics ko cover karenge aur dekhne ki koshish karenge ke yeh framework kaise kaam karta hai.
 
 ## Next.js Ke Features

@@ -1,4 +1,10 @@
+"use client";
 import React from "react";
+import Typed from "typed.js";
+import { useRef, useEffect } from "react";
+import LocomotiveScroll from "locomotive-scroll";
+import "locomotive-scroll/src/locomotive-scroll.scss"; // Import the CSS
+
 const testimonials = [
   {
     name: "John Doe",
@@ -29,74 +35,92 @@ const testimonials = [
 
 const blogs = [
   {
-    image: "https://example.com/image1.jpg",
-    title: "Blog Post 1",
-    excerpt: "This is a short description of blog post 1.",
-    link: "https://example.com/blog1",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZD7gtOg-aRXiYZ_ZkmYGch46UxHAygL-Pw&s",
+    title: "Typescript Blog", 
+    excerpt: "TypeScript ek JavaScript-based language hai jo strong type checking aur better debugging tools provide karti hai. Ye code ko JavaScript mein convert karta hai. Is blog mein, hum TypeScript ke basics aur use ko discuss karenge.",
+    link: '#',
+},
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZD7gtOg-aRXiYZ_ZkmYGch46UxHAygL-Pw&s",
+    title: "Next.js Blog",
+    excerpt: "Next.js ek React framework hai jo server-side rendering aur static site generation support karta hai. Ye fast performance aur SEO-friendly features provide karta hai. Is blog mein, hum Next.js ke basics aur features ko cover karenge.",
+    link: "#",
   },
   {
-    image: "https://example.com/image2.jpg",
-    title: "Blog Post 2",
-    excerpt: "This is a short description of blog post 2.",
-    link: "https://example.com/blog2",
-  },
-  {
-    image: "https://example.com/image3.jpg",
-    title: "Blog Post 3",
-    excerpt: "This is a short description of blog post 3.",
-    link: "https://example.com/blog3",
+    image: "https://miro.medium.com/v2/resize:fit:1200/1*LyZcwuLWv2FArOumCxobpA.png",
+    title: "JavaScript Blog",
+    excerpt: "JavaScript ek client-side language hai jo web pages ko interactive aur dynamic banati hai. Is blog mein, hum JavaScript ke basics aur asynchronous programming ko cover karenge. Blog me ham javascript complete karenge.",
+    link: "#",
   },
 ];
-function page() {
+
+export default function Page() {
+  // Create reference to store the DOM element containing the animation
+  const el = useRef(null);
+
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: [
+        "Coding",
+        "Web Development",
+        "Software Engineering",
+        "Data Science",
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Programming Languages",
+        "Next.js",
+        "React.js",
+      ],
+      typeSpeed: 50,
+      loop: true,
+    });
+
+    return () => {
+      // Destroy Typed instance during cleanup to stop animation
+      typed.destroy();
+    };
+  }, []);
+
+  useEffect(() => {
+    // Initialize Locomotive Scroll after the component is mounted (client-side)
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("main"), // Make sure this selector exists
+      smooth: true, // Enables smooth scrolling on desktop
+      smoothMobile: true, // Enables smooth scrolling on mobile
+      inertia: 0.8, // Adjusts the inertia (1 = no inertia, smaller values make it smoother)
+      lerp: 0.04, // Adjusts the scroll speed smoothness (lower values are slower/smoother)
+    });
+
+    // Adjust the footer position to ensure it's not cut off
+    const footer = document.querySelector("footer");
+    if (footer) {
+      footer.style.position = "relative";
+      // footer.style.zIndex = '10';
+    }
+
+    // Clean up on unmount
+    return () => {
+      if (scroll) scroll.destroy();
+    };
+  }, []);
   return (
     <main>
-      <section className="container px-4 py-10 mx-auto lg:h-128 lg:space-x-8 lg:flex lg:items-center">
+      <section className="container px-4 py-14 mx-auto lg:h-128 lg:space-x-8 lg:flex lg:items-center">
         <div className="w-full text-center lg:text-left lg:w-1/2 lg:-mt-8">
-          <h1 className="text-3xl leading-snug text-gray-800 dark:text-gray-200 md:text-4xl">
-            A <span className="font-semibold">free repository</span> for
-            community <br className="hidden lg:block" /> components using{" "}
-            <span className="font-semibold underline decoration-primary">
-              Tailwind CSS
-            </span>
+          <h1 className="text-4xl leading-snug text-gray-800 dark:text-gray-200 md:text-4xl">
+            Explore Free Blogs Like
+            <br className="hidden lg:block" />{" "}
+            <span className="font-bold" ref={el} />{" "}
           </h1>
-          <p className="mt-4 text-lg text-gray-500 dark:text-gray-300">
-            Open source Tailwind UI components and templates to{" "}
-            <br className="hidden lg:block" /> bootstrap your new apps, projects
-            or landing sites!
+          <p className="mt-4 text-2xl text-gray-500 dark:text-gray-300 md:text-xl">
+            Dive into our{" "}
+            <span className="font-semibold text-gray-600">
+              collection of free blogs
+            </span>{" "}
+            covering a wide range of <br className="hidden lg:block" />
+            platforms. Stay informed and enhance your skills with valuable
+            insights!
           </p>
-          <div className="mt-6 bg-transparent border rounded-lg dark:border-gray-700 lg:w-2/3 focus-within:border-primary focus-within:ring focus-within:ring-primary dark:focus-within:border-primary focus-within:ring-opacity-20">
-            <form
-              action="https://www.creative-tim.com/twcomponents/search"
-              className="flex flex-wrap justify-between md:flex-row"
-            >
-              <input
-                type="search"
-                name="query"
-                placeholder="Search Components"
-                required
-                className="flex-1 h-10 px-4 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none lg:h-12 dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0"
-              />
-              <button
-                type="submit"
-                className="flex items-center justify-center w-full p-2 m-1 text-white transition-colors duration-300 transform rounded-lg lg:w-12 lg:h-12 lg:p-0 bg-customPurple hover:bg-primary/70 focus:outline-none focus:bg-primary/70"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </button>
-            </form>
-          </div>
         </div>
         <div className="w-full mt-4 lg:mt-0 lg:w-1/2">
           <img
@@ -152,7 +176,7 @@ function page() {
             ].map((plan, index) => (
               <div
                 key={index}
-                className={`bg-white dark:bg-gray-800 shadow-lg shadow-gray-500 dark:shadow-gray-700 rounded-lg p-6 w-full md:w-1/3 hover:shadow-2xl transition-shadow duration-300 text-center ${
+                className={`bg-white dark:bg-gray-800 shadow-lg shadow-gray-500 dark:shadow-gray-700 rounded-lg p-6 w-full md:w-1/3 hover:shadow-2xl transition-shadow duration-300 text-center hover:scale-105 transition-transform duration-300 ${
                   plan.isBestseller
                     ? "border-2 border-customPurple relative"
                     : ""
@@ -219,7 +243,11 @@ function page() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 rounded-lg p-6 w-full md:w-1/3 transition-shadow duration-300 text-center animate-fadeIn shadow-lg dark:shadow-none hover:shadow-2xl hover:scale-105 transform"
+                className={`bg-white dark:bg-gray-800 rounded-lg p-6 w-full md:w-1/3 transition-all duration-300 text-center animate-fadeIn shadow-lg dark:shadow-none ${
+                  testimonial.name === "Jane Smith"
+                    ? "scale-105"
+                    : "hover:shadow-2xl hover:scale-105 transform dark:transition-all dark:duration-300"
+                }`}
                 style={{ boxShadow: "4px 8px 10px rgba(0, 0, 0, 0.5)" }} // Adjusted box-shadow
               >
                 <img
@@ -242,7 +270,7 @@ function page() {
         </div>
       </section>
       <section className="py-12 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto mb-14 px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-gray-900 dark:text-gray-100">
               Top Blogs
@@ -255,7 +283,9 @@ function page() {
             {blogs.map((blog, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 rounded-md p-6 transition-transform duration-300 transform hover:scale-105 shadow-lg dark:shadow-none hover:shadow-2xl"
+                className={`bg-white dark:bg-gray-800 rounded-md p-6 transition-transform duration-300 transform shadow-lg dark:shadow-none hover:shadow-2xl ${
+                  index === 1 ? "scale-105" : "hover:scale-105"
+                }`}
                 style={{
                   boxShadow:
                     "0 8px 26px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2)",
@@ -265,10 +295,10 @@ function page() {
                   className="w-full h-48 object-cover rounded-t-lg mb-4"
                   src={
                     index === 0
-                      ? "https://images.pexels.com/photos/574069/pexels-photo-574069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                      ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9gllMAZ8aQvnxnCey8rE1512fQmZs8ijI8A&s"
                       : index === 1
-                      ? "https://images.pexels.com/photos/1181279/pexels-photo-1181279.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                      : "https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                      ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZD7gtOg-aRXiYZ_ZkmYGch46UxHAygL-Pw&s"
+                      : "https://miro.medium.com/v2/resize:fit:1200/1*LyZcwuLWv2FArOumCxobpA.png"
                   }
                   alt={`${blog.title} image`}
                 />
@@ -279,13 +309,13 @@ function page() {
                   {blog.excerpt}
                 </p>
                 <div className="flex justify-end">
-                <a
-                  href={`/blog/${blog.slug}`}
-                  className="inline-block text-black-white bg-transparent  border-gray-800  hover:bg-customPurple transition duration-300 dark:border-zinc-50 dark:text-white py-1 px-3 mt-3 rounded border"
-                >
-                  Read more
-                </a>
-              </div>
+                  <a
+                    href={`/blog/${blog.slug}`}
+                    className="inline-block text-black-white bg-transparent  border-gray-800  hover:bg-customPurple transition duration-300 dark:border-zinc-50 dark:text-white py-1 px-3 mt-3 rounded border"
+                  >
+                    Read more
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -586,10 +616,10 @@ function page() {
               />
             </a>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-2">
             <div className="text-center">
-              <div className="text-md mt-2 py-1 font-normal text-white/60">
-                Web, Platform &amp; Design Copyright © 2024{" "}
+              <div className="text-md mt-6 py-1 mb-4 font-normal text-white/60 sm:mb-12">
+                Web Platform &amp; Design Copyright © 2024{" "}
                 <a href="#" className="text-inherit transition-all">
                   S 4 V A G E.
                 </a>
@@ -604,5 +634,3 @@ function page() {
     </main>
   );
 }
-
-export default page;

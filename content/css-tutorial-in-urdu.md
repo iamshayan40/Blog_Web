@@ -7,11 +7,10 @@ author: "Muhammad Shayan"
 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkdDy1MPyAklifM98twCxSuRj7EVJPO0cmHg&s" 
 ---
 
-**CSS Tutorial In Urdu**
 
 CSS (Cascading Style Sheets) ek style sheet language hai jo HTML documents ko style aur format karti hai. CSS web pages ki visual presentation ko control karti hai, jisse aap apni website ko attractive aur user-friendly bana sakte hain. Is blog mein, hum CSS ke basics aur uske use ko discuss karenge.
 
-### CSS Ki Basic Properties
+## CSS Ki Basic Properties
 
 1. **Color**: CSS ke zariye aap text aur background colors set kar sakte hain.
    ```css
@@ -52,7 +51,7 @@ CSS (Cascading Style Sheets) ek style sheet language hai jo HTML documents ko st
    }
    ```
 
-### CSS Layout Techniques
+## CSS Layout Techniques
 
 1. **Flexbox**: Flexbox ek powerful layout tool hai jo elements ko align aur distribute karne mein madad karta hai.
    ```css
@@ -80,7 +79,7 @@ CSS (Cascading Style Sheets) ek style sheet language hai jo HTML documents ko st
    }
    ```
 
-### Responsive Design
+## Responsive Design
 
 Responsive design ensure karta hai ke aapki website har device par achi dikhe. Media queries ka use karke aap different screen sizes ke liye styles define kar sakte hain.
    ```css
@@ -91,7 +90,7 @@ Responsive design ensure karta hai ke aapki website har device par achi dikhe. M
    }
    ```
 
-### Conclusion
+## Conclusion
 
 CSS ek essential tool hai jo web design ko enhance karta hai. Is blog mein humne CSS ke basic concepts aur properties par nazar daali. Aap in properties aur techniques ko use karke apni websites ko stylish aur functional bana sakte hain. Practice karte rahiye aur naye CSS features explore karte rahiye!
 

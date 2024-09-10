@@ -7,10 +7,6 @@ author: "Muhammad Shayan"
 image: "https://images.pexels.com/photos/1261427/pexels-photo-1261427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 ---
 
-# Introduction
-
-# Node.js
-
 Mujhe recently Node.js pe kaam karne ka mauka mila aur mujhe iske saath kaam karke kaafi acha experience mila. Is blog post mein, main apne Node.js ke tajurbaat aur iske advantages ko share karunga.
 
 ## Node.js Kya Hai?

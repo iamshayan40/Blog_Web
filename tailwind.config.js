@@ -14,6 +14,7 @@ module.exports = {
   	extend: {
   		colors: {
 			customPurple: '#6028FF',
+			customGray: '#101720',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -62,6 +63,8 @@ module.exports = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
-  plugins: [],
+  plugins: [require("tailwindcss-animate"),
+	require('@tailwindcss/typography'),
+  ],
+  
 };
