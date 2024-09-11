@@ -2,8 +2,6 @@
 import React from "react";
 import Typed from "typed.js";
 import { useRef, useEffect } from "react";
-import LocomotiveScroll from "locomotive-scroll";
-import "locomotive-scroll/src/locomotive-scroll.scss"; // Import the CSS
 
 const testimonials = [
   {
@@ -81,28 +79,7 @@ export default function Page() {
     };
   }, []);
 
-  useEffect(() => {
-    // Initialize Locomotive Scroll after the component is mounted (client-side)
-    const scroll = new LocomotiveScroll({
-      el: document.querySelector("main"), // Make sure this selector exists
-      smooth: true, // Enables smooth scrolling on desktop
-      smoothMobile: true, // Enables smooth scrolling on mobile
-      inertia: 0.8, // Adjusts the inertia (1 = no inertia, smaller values make it smoother)
-      lerp: 0.04, // Adjusts the scroll speed smoothness (lower values are slower/smoother)
-    });
 
-    // Adjust the footer position to ensure it's not cut off
-    const footer = document.querySelector("footer");
-    if (footer) {
-      footer.style.position = "relative";
-      // footer.style.zIndex = '10';
-    }
-
-    // Clean up on unmount
-    return () => {
-      if (scroll) scroll.destroy();
-    };
-  }, []);
   return (
     <main>
       <section className="container px-4 py-14 mx-auto lg:h-128 lg:space-x-8 lg:flex lg:items-center">
