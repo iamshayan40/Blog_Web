@@ -42,7 +42,6 @@ function Blog() {
                 <div className="flex justify-end">
                   <Link
                     href={`/blogpost/${blog.slug}`}
-                    as={`/blogpost/${blog.slug}`}
                     className="px-5 py-1.5 text-white dark:text-white font-medium border rounded-sm border-white hover:bg-blue-700 transition-colors duration-300"
                   >
                     Full Blog
