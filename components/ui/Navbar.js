@@ -72,14 +72,14 @@ const Navbar = () => {
             <ModeToggle />
           </div>
         </div>
-        <div className="md:hidden">
-          <span className="mx-2">
-            <ModeToggle />
+      <div className="md:hidden flex items-center">
+          <span className="mx-2 relative">
+       <ModeToggle />
           </span>
           <Sheet>
-            <SheetTrigger className="focus:outline-none">
+            <SheetTrigger className="focus:outline-none relative top-0 right-0">
               <svg
-                className="w-8 h-8"
+                className="w-10 h-10"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

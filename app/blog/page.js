@@ -14,7 +14,6 @@ const blogs = fs.readdirSync("content").map((file) => {
 console.log("All Blogs: ", blogs); // Debugging: Print blogs array
 
 function Blog() {
-  
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-4xl font-bold mb-8 dark:text-white">Blogs</h1>
@@ -43,6 +42,7 @@ function Blog() {
                 <div className="flex justify-end">
                   <Link
                     href={`/blogpost/${blog.slug}`}
+                    as={`/blogpost/${blog.slug}`}
                     className="px-5 py-1.5 text-white dark:text-white font-medium border rounded-sm border-white hover:bg-blue-700 transition-colors duration-300"
                   >
                     Full Blog
@@ -53,17 +53,17 @@ function Blog() {
           ))}
       </div>
       <footer className="bg-gray-800 text-white py-5 mt-10 rounded-lg dark:bg-customGray dark:text-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex flex-col items-center">
-      <div className="mb-4">
-        <h2 className="text-2xl font-bold">Shayan's Blog</h2>
-      </div>
-      <p className="text-gray-400 text-sm">
-        &copy; {new Date().getFullYear()} Shayan. All rights reserved.
-      </p>
-    </div>
-  </div>
-</footer>  
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center">
+            <div className="mb-4">
+              <h2 className="text-2xl font-bold">Shayan's Blog</h2>
+            </div>
+            <p className="text-gray-400 text-sm">
+              &copy; {new Date().getFullYear()} Shayan. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
