@@ -93,5 +93,3 @@ Responsive design ensure karta hai ke aapki website har device par achi dikhe. M
 ## Conclusion
 
 CSS ek essential tool hai jo web design ko enhance karta hai. Is blog mein humne CSS ke basic concepts aur properties par nazar daali. Aap in properties aur techniques ko use karke apni websites ko stylish aur functional bana sakte hain. Practice karte rahiye aur naye CSS features explore karte rahiye!
-
-Agar aapko CSS ke baare mein aur jaanana hai, toh comments mein apne questions zaroor pochain.

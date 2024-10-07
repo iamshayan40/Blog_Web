@@ -14,7 +14,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 
 export default async function Page({ params }) {
-  const filepath = `content/${params.slug}.md`;
+  const filepath = `content/${params.slug}.md`; // Use template literal for path
 
   if (!fs.existsSync(filepath)) {
     notFound();
@@ -27,7 +27,7 @@ export default async function Page({ params }) {
   const processor = unified()
     .use(remarkParse)
     .use(remarkRehype)
-    .use(rehypeDocument, { title: "👋🌍" })
+    .use(rehypeDocument, { title: data.title }) // Set document title dynamically
     .use(rehypeFormat)
     .use(rehypeStringify)
     .use(rehypeSlug)
@@ -43,15 +43,16 @@ export default async function Page({ params }) {
     });
 
   const htmlContent = (await processor.process(content)).toString();
+  
   return (
     <div className="max-w-5xl mx-auto p-4">
-      <h2 className="text-4xl font-bold mb-4 ">{data.title}</h2>
+      <h2 className="text-4xl font-bold mb-4">{data.title}</h2>
       <p className="text-lg mb-2 border-l-4 border-gray-500 pl-4 italic">
         &quot;{data.description}&quot;
       </p>
       <div className="flex gap-2">
-        <h2 className="text-sm text-gray-500 mb- italic">By {data.author}</h2>
-        <p className="text-sm text-gray-500 mb-4">{data.date}</p>
+        <h2 className="text-sm text-gray-500 italic">By {data.author}</h2>
+        <p className="text-sm text-gray-500">{data.date}</p>
       </div>
       <div
         dangerouslySetInnerHTML={{ __html: htmlContent }}

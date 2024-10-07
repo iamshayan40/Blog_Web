@@ -91,6 +91,4 @@ JavaScript DOM (Document Object Model) ko manipulate karne ke liye use hoti hai,
 
 JavaScript web development ka ek important part hai jo interactive aur dynamic websites create karne mein madad karta hai. Is blog mein humne JavaScript ke basic concepts aur properties par nazar daali. Practice karte rahiye aur naye JavaScript features explore karte rahiye!
 
-Agar aapko JavaScript ke baare mein aur jaanana hai, toh comments mein apne questions zaroor pochain.
-
 ---

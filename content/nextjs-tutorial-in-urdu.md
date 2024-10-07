@@ -40,15 +40,3 @@ Isse ek new Next.js project create ho jayega aur aap development server ko run k
 ## Conclusion
 
 Next.js ek versatile framework hai jo aapko React.js ke saath advanced features use karne ki suvidha deta hai. Aaj humne Next.js ke basic features aur installation process ko dekha. Aap aur bhi tutorials ke liye mere blog ko follow karte rahiye!
-
-```
-
-### Explanation:
-
-- **Frontmatter**: Metadata like title, slug, description, date, author, and image URL is specified.
-- **Intro**: Introduction to Next.js in Roman Urdu.
-- **Features**: Key features of Next.js explained.
-- **Installation**: Basic installation instructions.
-- **Conclusion**: Summary of the blog post.
-
-Is content ko apne `content/nextjs-tutorial-in-urdu.md` file mein save karke dekh sakte hain. Ye aapke blog page par correct rendering hona chahiye.

@@ -53,9 +53,3 @@ Node.js ke saath kaam karke mujhe kaafi acha experience mila aur main future mei
 ![Node.js](https://images.pexels.com/photos/1261427/pexels-photo-1261427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
 ```
 
-### Explanation:
-
-- **Frontmatter**: Title, slug, description, date, author, and image URL are specified.
-- **Content**: Introduction to Node.js, its advantages, a simple server example, and a conclusion in Roman Urdu.
-
-Aap is content ko `content/second-blog.md` file mein save kar sakte hain. Yeh aapke blog page par correct rendering hona chahiye.

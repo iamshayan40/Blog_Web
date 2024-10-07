@@ -127,5 +127,3 @@ React Router ek library hai jo client-side routing ke liye use hoti hai, jisse a
 ## Conclusion
 
 React ek powerful library hai jo modern web development ko simplify karti hai. Is blog mein humne React ke basics, components, state management, aur routing ko cover kiya. Practice karte rahiye aur naye React features explore karte rahiye!
-
-Agar aapko React ke baare mein aur jaanana hai, toh comments mein apne questions zaroor pochain.

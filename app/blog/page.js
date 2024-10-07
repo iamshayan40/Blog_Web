@@ -5,10 +5,10 @@ import Link from "next/link";
 
 // Fetching and Parsing Blogs
 const blogs = fs.readdirSync("content").map((file) => {
-  const fileContent = fs.readFileSync(`content/${file}`, "utf-8");
+  const fileContent = fs.readFileSync(`content/${file}`, "utf-8"); // Use template literal for path
   const { data } = matter(fileContent);
   console.log("Parsed Blog Data: ", data);
-  return data;
+  return { ...data, slug: file.replace(".md", "") }; // Add slug for the link
 });
 
 console.log("All Blogs: ", blogs); // Debugging: Print blogs array
@@ -41,7 +41,7 @@ function Blog() {
                 </p>
                 <div className="flex justify-end">
                   <Link
-                    href={`/blogpost/${blog.slug}`}
+                    href={`/blogpost/${blog.slug}`} // Use template literal for dynamic routing
                     className="px-5 py-1.5 text-white dark:text-white font-medium border rounded-sm border-white hover:bg-blue-700 transition-colors duration-300"
                   >
                     Full Blog

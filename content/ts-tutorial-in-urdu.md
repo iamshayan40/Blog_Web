@@ -136,4 +136,4 @@ function addToCart(product: Product): string {
 
 TypeScript seekhna aapko modern JavaScript applications develop karne mein madad karega aur aapke career mein ek naya dimension add karega. Agar aapko TypeScript ke concepts clear ho gaye hain to ab aap projects bana kar apne skills ko aur improve kar sakte hain. Is tutorial ke zariye humne kuch important concepts aur examples ko discuss kiya hai jo ke TypeScript mein commonly use hote hain.
 
-Is tutorial ko follow karne ke baad aap TypeScript ko confidently apne projects mein use kar payenge. Agar aapko koi confusion ho, to comment section mein zaroor poochein. Happy coding!
+Is tutorial ko follow karne ke baad aap TypeScript ko confidently apne projects mein use kar payenge.
