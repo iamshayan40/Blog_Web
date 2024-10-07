@@ -14,15 +14,15 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 
 export default async function Page({ params }) {
-  const filepath = `/content/${params.slug}.md`; // Absolute path to the markdown file
+  const filepath = path.join(process.cwd(), 'content', `${params.slug}.md`); // Build the absolute path
 
   if (!fs.existsSync(filepath)) {
       notFound();
       return;
   }
-  
+
   const fileContent = fs.readFileSync(filepath, "utf-8");
-  const { content, data } = matter(fileContent);  
+  const { content, data } = matter(fileContent); 
 
   const processor = unified()
     .use(remarkParse)
