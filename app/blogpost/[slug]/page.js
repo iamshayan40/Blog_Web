@@ -17,12 +17,13 @@ export default async function Page({ params }) {
   const filepath = `content/${params.slug}.md`; // Use template literal for path
 
   if (!fs.existsSync(filepath)) {
-    notFound();
-    return;
+      notFound();
+      return;
   }
+  
 
   const fileContent = fs.readFileSync(filepath, "utf-8");
-  const { content, data } = matter(fileContent);
+  const { content, data } = matter(fileContent);  
 
   const processor = unified()
     .use(remarkParse)
