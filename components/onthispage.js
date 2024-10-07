@@ -16,12 +16,14 @@ const OnThisPage = ({ htmlContent }) => {
     }));
     setHeadings(h2Data);
   }, [htmlContent]);
+
+
   return (
     <div className="on-this-page absolute top-48 md:right-48 lg:right-1/4 hidden lg:block">
       <h2 className='text-md font-bold my-2 mt-8'>On This Page</h2>
       <ul className='text-base space-y-1'>
-        {headings.map((heading, index) => (
-          <li key={index} className='hover:text-blue-900 transition-all duration-300'>
+      {headings.map((heading, index) => (
+          <li key={index}>
             <a href={`#${heading.id}`}>{heading.text}</a>
           </li>
         ))}

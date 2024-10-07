@@ -3,17 +3,18 @@ import matter from "gray-matter";
 import React from "react";
 import Link from "next/link";
 
-// Fetching and Parsing Blogs
-const blogs = fs.readdirSync("content").map((file) => {
-  const fileContent = fs.readFileSync(`content/${file}`, "utf-8");
-  const { data } = matter(fileContent);
-  console.log("Parsed Blog Data: ", data);
-  return data;
-});
+
+const dirContent = fs.readdirSync("content", "utf-8")
+
+const blogs = dirContent.map(file=>{
+    const fileContent = fs.readFileSync(`content/${file}`, "utf-8")
+    const {data} = matter(fileContent)
+    return data
+})
 
 console.log("All Blogs: ", blogs); // Debugging: Print blogs array
 
-function Blog() {
+const Blog = () => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-4xl font-bold mb-8 dark:text-white">Blogs</h1>
