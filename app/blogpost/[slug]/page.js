@@ -17,11 +17,10 @@ export default async function Page({ params }) {
   const filepath = `content/${params.slug}.md`; // Use template literal for path
 
   if (!fs.existsSync(filepath)) {
-      notFound();
+      notFound(); // If the file doesn't exist, show a 404 error
       return;
   }
   
-
   const fileContent = fs.readFileSync(filepath, "utf-8");
   const { content, data } = matter(fileContent);  
 
