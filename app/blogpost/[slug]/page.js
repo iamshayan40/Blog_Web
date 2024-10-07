@@ -14,10 +14,10 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 
 export default async function Page({ params }) {
-  const filepath = `content/${params.slug}.md`; // Use template literal for path
+  const filepath = `/content/${params.slug}.md`; // Absolute path to the markdown file
 
   if (!fs.existsSync(filepath)) {
-      notFound(); // If the file doesn't exist, show a 404 error
+      notFound();
       return;
   }
   
