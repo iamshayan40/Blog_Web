@@ -1,58 +1,61 @@
 import fs from "fs";
+import path from "path";
 import matter from "gray-matter";
-import { notFound } from "next/navigation";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
 import rehypeDocument from "rehype-document";
 import rehypeFormat from "rehype-format";
 import rehypeStringify from "rehype-stringify";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import { unified } from "unified";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import OnThisPage from "@/components/onthispage";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeSlug from "rehype-slug";
+import { notFound } from "next/navigation";
 
-export default async function Page({ params }) {
+// Function to generate static paths for all markdown files
+export async function generateStaticParams() {
+  const files = fs.readdirSync(path.join(process.cwd(), "content"));
 
-  // const blog = {
-  //     title: "Typescript tutorial in hindi",
-  //     author: "John Doe",
-  //     description: "This is a sample blog post description.",
-  //     date: "2024-09-02",
-  //     content: "<p>This is the content of the blog post. It can include <strong>HTML</strong> tags and other elements.</p>"
-  // };
+  return files.map((filename) => {
+    const slug = filename.replace(".md", "");
+    return { slug };
+  });
+}
 
-  const filepath = `content/${params.slug}.md`
-  
-  if(!fs.existsSync(filepath)){ 
-      notFound() 
-      return 
-  } 
+// Blog post component using slug params
+export default async function BlogPostPage({ params }) {
+  const { slug } = params;
+  const filepath = path.join(process.cwd(), "content", `${slug}.md`);
 
-  const fileContent = fs.readFileSync(filepath, "utf-8")
-  const {content, data} = matter(fileContent)
+  if (!fs.existsSync(filepath)) {
+    notFound(); // Show 404 if blog doesn't exist
+  }
+
+  const fileContent = fs.readFileSync(filepath, "utf-8");
+  const { content, data } = matter(fileContent);
 
   const processor = unified()
-  .use(remarkParse)
-  .use(remarkRehype)
-  .use(rehypeDocument, {title: '👋🌍'})
-  .use(rehypeFormat)
-  .use(rehypeStringify) 
-  .use(rehypeSlug)
-  .use(rehypeAutolinkHeadings)
-  .use(rehypePrettyCode, {
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeDocument, { title: data.title })
+    .use(rehypeFormat)
+    .use(rehypeStringify)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings)
+    .use(rehypePrettyCode, {
       theme: "aurora-x",
       transformers: [
-          transformerCopyButton({
-            visibility: 'always',
-            feedbackDuration: 3_000,
-          }),
-        ],
+        transformerCopyButton({
+          visibility: "always",
+          feedbackDuration: 3000,
+        }),
+      ],
+    });
 
-    })
+  const htmlContent = (await processor.process(content)).toString();
 
-  const htmlContent = (await processor.process(content)).toString()
   return (
     <div className="max-w-5xl mx-auto p-4">
       <h2 className="text-4xl font-bold mb-4 ">{data.title}</h2>
