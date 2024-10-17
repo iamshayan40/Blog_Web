@@ -247,56 +247,8 @@ export default function Page() {
         </div>
       </section>
       <section className="py-12 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto mb-14 px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-gray-100">
-              Top Blogs
-            </h2>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-              Discover our most popular blog posts.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blogs.map((blog, index) => (
-              <div
-                key={index}
-                className={`bg-white dark:bg-gray-800 rounded-md p-6 transition-transform duration-300 transform shadow-lg dark:shadow-none hover:shadow-2xl ${
-                  index === 1 ? "scale-105" : "hover:scale-105"
-                }`}
-                style={{
-                  boxShadow:
-                    "0 8px 26px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2)",
-                }} // Adjusted box-shadow
-              >
-                <img
-                  className="w-full h-48 object-cover rounded-t-lg mb-4"
-                  src={
-                    index === 0
-                      ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9gllMAZ8aQvnxnCey8rE1512fQmZs8ijI8A&s"
-                      : index === 1
-                      ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZD7gtOg-aRXiYZ_ZkmYGch46UxHAygL-Pw&s"
-                      : "https://miro.medium.com/v2/resize:fit:1200/1*LyZcwuLWv2FArOumCxobpA.png"
-                  }
-                  alt={`${blog.title} image`}
-                />
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-                  {blog.title}
-                </h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  {blog.excerpt}
-                </p>
-                <div className="flex justify-end">
-                  <a
-                    href={`/blog/${blog.slug}`}
-                    className="inline-block text-black-white bg-transparent  border-gray-800  hover:bg-customPurple transition duration-300 dark:border-zinc-50 dark:text-white py-1 px-3 mt-3 rounded border"
-                  >
-                    Read more
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+          <hr className="mt-28 border-gray-500" />
+       
       </section>
 
       <footer className="relative bg-gray-900 px-8 pt-24 pb-6">
